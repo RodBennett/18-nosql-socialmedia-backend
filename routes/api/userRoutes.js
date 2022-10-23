@@ -8,7 +8,7 @@ const {
     getSingleUser,
     createUser,
     updateUser,
-    deleteUser } = require('../../controllers/userController.js');
+    deleteUser } = require('../../controllers/userControllers.js');
 
     // endpoint api/users
 router.route('/').get(getUsers).post(createUser);
