@@ -5,10 +5,10 @@ const router = require('express').Router();
 
 const {
     getUsers,
-    getSingleUser,
+    // getSingleUser,
     createUser,
-    updateUser,
-    deleteUser } = require('../../controllers/userControllers.js');
+    // updateUser,
+} = require('../../controllers/userControllers.js');
 
     // endpoint api/users
 router.route('/').get(getUsers).post(createUser);

@@ -7,5 +7,14 @@ module.exports = {
         .then((users) => res.json(users))
         .catch((err) => res.status(500).json(err));
     },
+    createUser(req, res) {
+        User.create(req.body)
+        .then((user) => console.log(user))
+        .catch((err) => {
+            console.log(err);
+            return res.status(500).json(err)
+
+        })
+    }
 }
 
