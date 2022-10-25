@@ -49,7 +49,7 @@ const thoughtSchema = new Schema(
         reactions: [reactionSchema]
     });
 
-// VIRTUAL FIELD FOR REACTIONCOUNT TO RETRIEVE ENTIRE LENGTH OF REACTI0NS ON ANY GIVEN QUERY
+// VIRTUAL FIELD FOR REACTIONCOUNT TO RETRIEVE ENTIRE LENGTH OF REACTIONS ON ANY GIVEN QUERY
 reactionSchema.virtual("reactionCount").get(function () {
     return this.reactions.length;
 })
