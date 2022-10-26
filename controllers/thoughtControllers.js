@@ -52,7 +52,11 @@ module.exports = {
         .catch((err) => res.status(500).json(err))
     },
     // CREATE A REACTION
-    createReaction(req, res) {
-        Thought.create()
-    }
+    // createReaction(req, res) {
+    //     Thought.create([
+    //         {
+    //             $match
+    //         }
+    //     ])
+    // }
 }
