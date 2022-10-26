@@ -11,13 +11,13 @@ const {
     deleteThought
 } = require('../../controllers/thoughtControllers.js');
 
- // endpoint to /api/thoughts
- router.route('/').get(getThoughts).post(createThought);
- 
- // endpoint /api/thoughts/:thoughtId
- router.route('/:thoughtId')
- .get(getSingleThought)
- .put(updateThought)
- .delete(deleteThought)
+// endpoint /api/thoughts
+router.route('/').get(getThoughts).post(createThought);
+
+// endpoint /api/thoughts/:thoughtId
+router.route('/:thoughtId')
+    .get(getSingleThought)
+    .put(updateThought)
+    .delete(deleteThought)
 
 module.exports = router;

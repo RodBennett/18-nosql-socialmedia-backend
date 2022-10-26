@@ -11,14 +11,14 @@ const {
     deleteUser
 } = require('../../controllers/userControllers.js');
 
-    // endpoint api/users
+// endpoint /api/users
 router.route('/').get(getUsers).post(createUser);
 
-    // endpoint api/users/:userId
+// endpoint /api/users/:userId
 router.route('/:userId')
-.get(getSingleUser)
-.put(updateUser)
-.delete(deleteUser)
+    .get(getSingleUser)
+    .put(updateUser)
+    .delete(deleteUser)
 
 module.exports = router;
 
