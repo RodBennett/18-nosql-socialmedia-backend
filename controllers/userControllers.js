@@ -13,7 +13,7 @@ module.exports = {
     getSingleUser(req, res) {
         User.findOne({ _id: req.params.userId })
             .select('-__v')
-            .then((user) => 
+            .then((user) =>
                 !user
                     ? res.status(404).json({ message: "No user with that ID" })
                     : res.json(user)
@@ -35,7 +35,7 @@ module.exports = {
             { _id: req.params.userId },
             //  THIS LINE MAY NEED TO BE DELETED
             // { $addToSet: { thoughts: req.body } }
-                { $set: req.body },
+            { $set: req.body },
             { runValidators: true, new: true }
         )
             .then((user) =>
@@ -55,5 +55,33 @@ module.exports = {
             ).then(() => res.json({ message: "User and thoughts have been deleted" }))
             .catch((err) => res.status(500).json(err));
     },
-}
+    // ADD FRIEND TO USER
+    addFriend(req, res) {
+        User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $addToSet: { friends: req.body } },
+            { runValidators: true, new: true }
+        )
+            .then((user) =>
+                !user
+                    ? res.status(404).json({ message: "No such user exists" })
+                    : res.json(user)
+            )
+            .catch((err) => res.json(500).json(err));
+    },
+    // DELETE FRIEND FROM USER
+    deleteUser(req, res) {
+        User.findOneAndDelete(
+            { _id: req.params.userId },
+            { $pull: { friend: { friendId: req.params.friendId } } },
+            { runvalidators: true, new: true }
+        )
+        .then((user) =>
+        !user
+            ? res.status(404).json({ message: "No such user exists!!!" })
+            : res.json(user)
+    )
+    .catch((err) => res.status(500).json(err));
+
+ }}
 
