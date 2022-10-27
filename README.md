@@ -7,14 +7,14 @@ The code contained in this repository is a backend api for a social networking s
 
 ## Table of Contents
 
-### [User Story](#user-story)
-### [Acceptance Criteria](#acceptance-criteria)
-### [Static Screenshots](#static-screenshots)
-### [Challenges](#challenges)
-### [Future Devlopment](#future-development)
-### [Contributing](#contributing)
-### [Technologies](#technologies)
-### [Contact](#contact)
+#### [User Story](#user-story)
+#### [Acceptance Criteria](#acceptance-criteria)
+#### [Static Screenshots](#static-screenshots)
+#### [Challenges](#challenges)
+#### [Future Devlopment](#future-development)
+#### [Contributing](#contributing)
+#### [Technologies](#technologies)
+#### [Contact](#contact)
 
 ### [Walkthrough Video]()
 
@@ -58,7 +58,7 @@ The backend code and routes contained in this repo will be used in the near futu
 As this is an assignment for a coding bootcamp, it is not open to public contributions.
 
 ## Contact
-`All code created by the owner of this Repository.  If you have any questions or comments, please contact me at:`
+*`All code created by the owner of this Repository.  If you have any questions or comments, please contact me at:`*
 - [Rod's Email](rod.bennett75@gmail.com)
 - [Rod's Github Profile](https://github.com/RodBennett)
 
