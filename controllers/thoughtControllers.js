@@ -9,10 +9,11 @@ module.exports = {
             .then((thoughts) => res.json(thoughts))
             .catch((err) => res.status(500).json(err));
     },
-    // GETTING ONE THOUGHT BY REQ.PARAMS
+    // GET ONE THOUGHT BY REQ.PARAMS
     getSingleThought(req, res) {
         Thought.findOne({ _id: req.params.thoughtId })
-            .select('__v')
+            .select('thoughtText')
+            .select('reactions')
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: "No such thought exists!" })
