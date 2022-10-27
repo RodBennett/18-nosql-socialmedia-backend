@@ -24,8 +24,10 @@ const userSchema = new Schema(
                 type: Schema.Types.ObjectId,
                 ref: 'thought',
             }
+
         ],
         // ARRAY OF OBJECT IDS SELF-REFERENCING USER MODEL
+        // friends: [userSchema],
         friends: [
             {
                 type: Schema.Types.ObjectId,

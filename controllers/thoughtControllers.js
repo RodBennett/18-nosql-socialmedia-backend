@@ -1,5 +1,5 @@
 // IMPORT THOUGHT MODEL
-const { User, Thought } = require('../models');
+const { Thought } = require('../models');
 
 // EXPORTED FUNCTIONS
 // GETTING ALL THOUGHTS
