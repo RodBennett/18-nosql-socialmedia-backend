@@ -54,11 +54,21 @@ module.exports = {
             .catch((err) => res.status(500).json(err))
     },
     // CREATE A REACTION
-    // createReaction(req, res) {
-    //     Thought.create([
-    //         {
-    //             $match
-    //         }
-    //     ])
+    createReaction(req, res) {
+        console.log(req.body)
+        Thought.findOneAndUpdate(
+            { _id: req.params.thoughtId },
+            { $addToSet: { reactions: req.body } },
+            // { runValidators: true, new: true }
+        )
+            .then((thought) =>
+                !thought
+                    ? res.status(404).json({ message: "No such thought exists, sorry!!!" })
+                    : res.json(thought)
+            )
+            .catch((err) => res.status(500).json(err));
+    },
+    // DELETE A REACTION
+    // deleteReaction(req, res) {
     // }
 }

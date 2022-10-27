@@ -50,9 +50,9 @@ const thoughtSchema = new Schema(
     });
 
 // VIRTUAL FIELD FOR REACTIONCOUNT TO RETRIEVE ENTIRE LENGTH OF REACTIONS ON ANY GIVEN QUERY
-reactionSchema.virtual("reactionCount").get(function () {
-    return this.reactions.length;
-})
+// reactionSchema.virtual("reactionCount").get(function () {
+//     return this.reactions.length;
+// })
 
 // INITIALIZE THE THOUGHT MODEL
 const Thought = model('thought', thoughtSchema)

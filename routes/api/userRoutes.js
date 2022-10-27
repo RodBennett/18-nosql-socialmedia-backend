@@ -2,7 +2,6 @@
 const router = require('express').Router();
 
 // CALL FUNCTIONS IN THE USERCONTROLLER.JS
-
 const {
     getUsers,
     getSingleUser,
