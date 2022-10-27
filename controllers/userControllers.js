@@ -76,12 +76,12 @@ module.exports = {
             { $pull: { friend: { friendId: req.params.friendId } } },
             { runvalidators: true, new: true }
         )
-        .then((user) =>
-        !user
-            ? res.status(404).json({ message: "No such user exists!!!" })
-            : res.json(user)
-    )
-    .catch((err) => res.status(500).json(err));
-
- }}
+            .then((user) =>
+                !user
+                    ? res.status(404).json({ message: "No such user exists!!!" })
+                    : res.json(user)
+            )
+            .catch((err) => res.status(500).json(err));
+    },
+}
 
