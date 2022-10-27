@@ -2,14 +2,14 @@
 const router = require('express').Router();
 
 // CALL FUNCTIONS FROM THOUGHTCONTROLLERS.JS
-
 const {
     getThoughts,
     getSingleThought,
     createThought,
     updateThought,
     deleteThought,
-    createReaction
+    createReaction,
+    deleteReaction
 } = require('../../controllers/thoughtControllers.js');
 
 // endpoint /api/thoughts
@@ -24,6 +24,9 @@ router.route('/:thoughtId')
 // endpoint /api/:thoughtId/reactions
 router.route('/:thoughtId/reactions')
     .post(createReaction)
-    // .delete(deleteReaction)
+    
+// endpoint /api/:thoughtId/reactions/:reactionId
+router.route('/:thoughtId/reactions/reactionId')
+    .delete(deleteReaction)
 
 module.exports = router;

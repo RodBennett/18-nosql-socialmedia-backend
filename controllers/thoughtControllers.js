@@ -60,6 +60,7 @@ module.exports = {
             { _id: req.params.thoughtId },
             { $addToSet: { reactions: req.body } },
             { runValidators: true, new: true }
+                // .select('-__v')
         )
             .then((thought) =>
                 !thought
@@ -69,6 +70,18 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // DELETE A REACTION
-    // deleteReaction(req, res) {
-    // }
+    deleteReaction(req, res) {
+        console.log(req.body)
+        Thought.findOneAndDelete(
+            { _id: req.params.thoughtId },
+            { $pull: { reaction: { reactionId: req.params.reactionId } } },
+            { runValidators: true, new: true }
+        )
+            .then((thought) =>
+                !thought
+                    ? res.status(404).json({ message: "No such thought exists!!!" })
+                    : res.json(thought)
+            )
+            .catch((err) => res.status(500).json(err));
+    },
 }
