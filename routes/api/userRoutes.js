@@ -21,11 +21,8 @@ router.route('/:userId')
     .put(updateUser)
     .delete(deleteUser)
 
-// endpoint /api/users/:userId/friends
-// router.route('./userId/friends').post(addFriend)
-
-// endpoint /api/users/:userId/friend/:friendId
-router.route('./userId/friends/:friendId').post(addFriend).delete(deleteFriend)
+// endpoint /api/users/:userId/friends/:friendId
+router.route('/:userId/friends/:friendId').post(addFriend).delete(deleteFriend)
 module.exports = router;
 
 

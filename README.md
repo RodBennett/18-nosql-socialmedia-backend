@@ -3,18 +3,18 @@
 
 ## Overview
 
-The code contained in this repository is a backend api for a social networking site that incldues Restful CRUD routes for finding, creating, updating and deleting users, comments, friends, and reactions.
+The code contained in this repository is a backend api for a social networking site that includes Restful CRUD routes for finding, creating, updating and deleting users, comments, friends, and reactions.
 
 ## Table of Contents
 
 - #### [User Story](#user-story)
-- #### [Acceptance Criteria](#acceptance-criteria)
-- #### [Static Screenshots](#static-screenshots)
-- #### [Challenges](#challenges)
-- #### [Future Devlopment](#future-development)
-- #### [Contributing](#contributing)
-- #### [Technologies](#technologies)
-- #### [Contact](#contact)
+- #### [Acceptance](#acceptance-criteria)
+- #### [Screenshot](#static-screenshots)
+- #### [Challenge](#challenges)
+- #### [Future Developments](#future-development)
+- #### [Contributors](#contributing)
+- #### [Technology Used](#technologies)
+- #### [Contact Info](#contact)
 
 ### [Walkthrough Video]()
 
@@ -41,7 +41,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ## Static Screenshots
 ## Challenges
 
-This was a very straightforward projet that had surprisingly few challenges.  It enabled us to use MongoDB and the Mongoose wrapper for modeling and flexible JSON data storage. The only challenging part for me was getting the "friends" property to accept and delete posts, but after a bit of trial error was able to figure it out.
+This was a very straightforward project that had surprisingly few challenges.  It enabled us to use MongoDB and the Mongoose wrapper for modeling and flexible JSON data storage. The only challenging part for me was getting the "friends" property to accept and delete posts, but after a bit of trial error was able to figure it out.
 
 ## Future Development
 
@@ -58,7 +58,7 @@ The backend code and routes contained in this repo will be used in the near futu
 As this is an assignment for a coding bootcamp, it is not open to public contributions.
 
 ## Contact
-*`All code created by the owner of this Repository.  If you have any questions or comments, please contact me at:`*
+All code created by the owner of this Repository.  If you have any questions or comments, please contact me at:
 - [Rod's Email](rod.bennett75@gmail.com)
 - [Rod's Github Profile](https://github.com/RodBennett)
 

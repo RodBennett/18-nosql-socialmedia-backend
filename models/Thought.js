@@ -20,13 +20,7 @@ const reactionSchema = new Schema(
             type: Date, default: Date.now
         }
     },
-    // ALLOWS VIRTUALS TO BE CONVERTED TO JSON
-    {
-        toJSON: {
-          getters: true,
-        },
-        id: false,
-    });
+);
 
 // SCHEMA FOR THOUGHT MODEL
 const thoughtSchema = new Schema(
@@ -46,13 +40,28 @@ const thoughtSchema = new Schema(
             type: String,
             required: true,
         },
-        reactions: [reactionSchema]
+        
+        reactions: [reactionSchema],
+    },
+    // ALLOWS VIRTUALS TO BE CONVERTED TO JSON
+    {
+        toJSON: {
+          getters: true,
+        },
+        id: false,
+    },
+    {
+        toJSON: {
+          virtuals: true,
+        },
+        id: false,
     });
 
+
 // VIRTUAL FIELD FOR REACTIONCOUNT TO RETRIEVE ENTIRE LENGTH OF REACTIONS ON ANY GIVEN QUERY
-// reactionSchema.virtual("reactionCount").get(function () {
-//     return this.reactions.length;
-// })
+thoughtSchema.virtual("reactionCount").get(function () {
+    return this.reactions.length;
+})
 
 // INITIALIZE THE THOUGHT MODEL
 const Thought = model('thought', thoughtSchema)
