@@ -39,6 +39,10 @@ WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list.
 ```
 ## Static Screenshots
+
+<img width="1352" alt="Screen Shot 2022-10-27 at 10 22 11 PM" src="https://user-images.githubusercontent.com/106923428/198501971-1a4b9046-e004-4137-8d70-820ec8ad0cf2.png">
+
+
 ## Challenges
 
 This was a very straightforward project that had surprisingly few challenges.  It enabled us to use MongoDB and the Mongoose wrapper for modeling and flexible JSON data storage. The only challenging part for me was getting the "friends" property to accept and delete posts, but after a bit of trial error was able to figure it out.
