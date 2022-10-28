@@ -7,14 +7,14 @@ The code contained in this repository is a backend api for a social networking s
 
 ## Table of Contents
 
-- #### [User Story](#user-story)
-- #### [Acceptance](#acceptance-criteria)
-- #### [Screenshot](#static-screenshots)
-- #### [Challenge](#challenges)
-- #### [Future Developments](#future-development)
-- #### [Contributors](#contributing)
-- #### [Technology Used](#technologies)
-- #### [Contact Info](#contact)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Screenshot](#static-screenshots)
+- [Challenges](#challenges)
+- [Future Development](#future-development)
+- [Contributors](#contributing)
+- [Technology Used](#technologies)
+- [Contact Info](#contact)
 
 ### [Walkthrough Video]()
 

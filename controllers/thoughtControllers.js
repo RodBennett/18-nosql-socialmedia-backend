@@ -70,14 +70,13 @@ module.exports = {
     },
     // DELETE A REACTION
     deleteReaction(req, res) {
-        console.log(req.body)
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $pull: { reaction: { reactionId: req.body.reactionId } } },
+            { $pull: { reactions: { reactionId: req.body.reactionId } } },
             { new: true }
             )
-            .then((thought) => console.log(thought)
-                // !thought
+            .then((thought) =>
+                !thought
                     ? res.status(404).json({ message: "No such thought exists!!!" })
                     : res.json(thought)
             )

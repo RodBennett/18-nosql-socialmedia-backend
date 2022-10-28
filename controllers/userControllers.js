@@ -78,8 +78,8 @@ module.exports = {
             { $pull: { friend: { friendId: req.params.friendId } } },
             { new: true }
         )
-            .then((user) =>
-                !user
+            .then((user) => console.log(user)
+                // !user
                     ? res.status(404).json({ message: "No such user exists!!!" })
                     : res.json(user)
             )
