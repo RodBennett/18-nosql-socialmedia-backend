@@ -12,8 +12,8 @@ module.exports = {
     // GET ONE THOUGHT BY REQ.PARAMS
     getSingleThought(req, res) {
         Thought.findOne({ _id: req.params.thoughtId })
-            .select('thoughtText')
-            .select('reactions')
+            // .select('username')
+            // .select('reactions')
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: "No such thought exists!" })
@@ -23,7 +23,7 @@ module.exports = {
     // CREATE A NEW THOUGHT
     createThought(req, res) {
         Thought.create(req.body)
-            .then((thought) => console.log(thought))
+            .then((thought) => res.json(thought))
             .catch((err) => {
                 console.log(err, "This thought is an error");
                 return res.status(500).json(err)
@@ -70,9 +70,10 @@ module.exports = {
     },
     // DELETE A REACTION
     deleteReaction(req, res) {
+        console.log(req.params)
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $pull: { reactions: { reactionId: req.body.reactionId } } },
+            { $pull: { reactions: req.body.reactionId } },
             { new: true }
             )
             .then((thought) =>
