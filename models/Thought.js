@@ -17,10 +17,11 @@ const reactionSchema = new Schema(
             required: true
         },
         createdAt: {
-            type: Date, default: Date.now
+            type: Date,
+            default: Date.now,
+            get: formatDate,
         }
-    },
-);
+    })
 
 // SCHEMA FOR THOUGHT MODEL
 const thoughtSchema = new Schema(
@@ -32,31 +33,37 @@ const thoughtSchema = new Schema(
             maxlength: 280,
         },
         // CURRENT TIMESTAMP AND GETTER METHOD FOR QUERIES
-        createdAt: { 
-            type: Date, default: Date.now
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            get: formatDate,
         },
-        username: 
+        username:
         {
             type: String,
             required: true,
         },
-        
+
         reactions: [reactionSchema],
     },
     // ALLOWS VIRTUALS TO BE CONVERTED TO JSON
     {
         toJSON: {
-          getters: true,
+            getters: true,
         },
         id: false,
     },
     {
         toJSON: {
-          virtuals: true,
+            virtuals: true,
         },
         id: false,
     });
 
+// FORMAT DATE FOR READABLE DATE STAMP
+function formatDate(createdAt) {
+    return createdAt.toLocaleString();
+};
 
 // VIRTUAL FIELD FOR REACTIONCOUNT TO RETRIEVE ENTIRE LENGTH OF REACTIONS ON ANY GIVEN QUERY
 thoughtSchema.virtual("reactionCount").get(function () {

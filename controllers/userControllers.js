@@ -34,7 +34,7 @@ module.exports = {
         User.findOneAndUpdate(
             { _id: req.params.userId },
             //  THIS LINE MAY NEED TO BE DELETED
-            // { $addToSet: { thoughts: req.body } }
+            // { $addToSet: { thoughts: req.body } },
             { $set: req.body },
             { runValidators: true, new: true }
         )
@@ -61,10 +61,9 @@ module.exports = {
             { _id: req.params.userId },
             { $addToSet: { friends: req.params.friendId } },
             { new: true },
-            // console.log(user),
         )
-            .then((user) => console.log(user)
-                // !user
+            .then((user) =>
+                 !user
                     ? res.status(404).json({ message: "No such user exists" })
                     : res.json(user)
             )
@@ -79,8 +78,8 @@ module.exports = {
             { $pull: { friends: req.params.friendId } },
             { new: true }
         )
-            .then((user) => console.log(user)
-                // !user
+            .then((user) =>
+                 !user
                     ? res.status(404).json({ message: "No such user exists!!!" })
                     : res.json(user)
             )

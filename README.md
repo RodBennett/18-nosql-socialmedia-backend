@@ -16,7 +16,7 @@ The code contained in this repository is a backend api for a social networking s
 - [Technology Used](#technologies)
 - [Contact Info](#contact)
 
-### [Walkthrough Video]()
+### [Walkthrough Video](https://drive.google.com/file/d/1NNZpkeQAA3ka-0To5DPd2OVtVVtUvGda/view?usp=sharing)
 
 ## User Story
 
