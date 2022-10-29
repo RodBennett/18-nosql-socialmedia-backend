@@ -10,9 +10,10 @@ The code contained in this repository is a backend api for a social networking s
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Screenshot](#static-screenshots)
+- [Installation](#installation)
 - [Challenges](#challenges)
 - [Future Development](#future-development)
-- [Contributors](#contributing)
+- [Contributing](#contributing)
 - [Technology Used](#technologies)
 - [Contact Info](#contact)
 
@@ -41,6 +42,17 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ## Static Screenshots
 
 <img width="1352" alt="Screen Shot 2022-10-27 at 10 22 11 PM" src="https://user-images.githubusercontent.com/106923428/198501971-1a4b9046-e004-4137-8d70-820ec8ad0cf2.png">
+
+## Installation
+
+1. Clone repo to your machine and open the code in a text editor such as VS Code.
+2. Run ```npm i``` in your terminal to install the necessary npms for this program.
+3. Run ``` npm run dev ``` in your termial to activate the program.
+4. Open Insomnia (or any other software to test routes with scuh at Postman), and use ``` http://localhost:3001 ``` to start testing routes.
+5. To test USER routes, use the route ``` /api/users/:userId ``` to search, create, update, and delete users.
+6. To test THOUGHT routes, use the route ``` /api/thoughts/:thoughtId ``` to search, update, create, and delete thoughts.
+7. To test REACTION routes, use the route ``` /api/thoughts/:thoughtId/reactions/:reactionId ``` to post and delete reactions.
+8. To test FRIEND routes, use the route ``` /api/users/:userId/friends/:friendId ``` to add or delete friends.
 
 
 ## Challenges
